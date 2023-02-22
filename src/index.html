@@ -174,7 +174,7 @@
 
                 var unionedLines = turf.union(polyAsLine, clippingLineGeojson);
                 var polygonized = turf.polygonize(unionedLines);
-                var keepFromPolygonized = polygonized["features"].filter(ea => turf.booleanPointInPolygon(turf.pointOnFeature(ea), atgsLayer.getLayers()[0].feature));
+                var keepFromPolygonized = polygonized["features"].filter(ea => turf.booleanPointInPolygon(turf.pointOnFeature(ea), selectedPoly));
                 keepFromPolygonized[0].properties = { "t": "clipped1" }
                 keepFromPolygonized[1].properties = { "t": "clipped2" }
 
